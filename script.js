@@ -151,3 +151,62 @@ window.onload = function () {
   loadPlayersToDropdown();
   showStats();
 };
+
+// leader board
+
+function showLeaderBoard() {
+  var stats = JSON.parse(localStorage.getItem("matchStats")) || {};
+  var table = document.getElementById("leaderBoardTable");
+  if (!table) return;
+
+  table.innerHTML = "";
+
+  var players = [];
+  for (var player in stats) {
+    players.push({
+      name: player,
+      wins: stats[player].wins || 0,
+      losses: stats[player].losses || 0
+    });
+  }
+
+  // wins descending
+  players.sort(function(a, b) {
+    return b.wins - a.wins;
+  });
+
+  // Create rows
+  for (var i = 0; i < players.length; i++) {
+    var row = document.createElement("tr");
+
+    var rankCell = document.createElement("td");
+    rankCell.textContent = i + 1;
+
+    var nameCell = document.createElement("td");
+    nameCell.textContent = players[i].name;
+
+    var winCell = document.createElement("td");
+    winCell.textContent = players[i].wins;
+
+    var lossCell = document.createElement("td");
+    lossCell.textContent = players[i].losses;
+
+    row.appendChild(rankCell);
+    row.appendChild(nameCell);
+    row.appendChild(winCell);
+    row.appendChild(lossCell);
+
+    table.appendChild(row);
+  }
+}
+
+window.onload = function () {
+  const savedItems = JSON.parse(localStorage.getItem("items")) || [];
+  if (typeof addItem === "function" && document.getElementById("itemList")) {
+    savedItems.forEach(item => addItem(item));
+  }
+
+  loadPlayersToDropdown?.();
+  showStats?.();
+  showLeaderBoard?.();
+};
