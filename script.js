@@ -10,8 +10,6 @@ window.onload = function () {
 }
 
 
-
-
 function addPlayer() {
   const text = input.value.trim();
   if (text !== '') {
@@ -52,3 +50,13 @@ function removePlayer() {
     alert("Player not found.");
     return;
   }
+
+  items = items.filter(item => item !== nameToRemove);
+  localStorage.setItem("items", JSON.stringify(items));
+
+  list.innerHTML = "";
+  items.forEach(item => addItem(item));
+
+  // clear input
+  document.getElementById("removePlayerName").value = "";
+}
