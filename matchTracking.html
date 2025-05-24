@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Match Tracking</title>
+  </head>
+<body>
+     <div class="topnav">
+        <a href="index.html">Home</a>
+        <a class="active" href="player.html">Player</a>
+        <a href="leaderBoard.html">LeaderBoard</a>
+        <a href="matchTracking.html">Match Tracking</a>
+    </div>
+    <br>
+    <br>
+  <h2>Match Tracking</h2>
+
+  <label>Select Player A:</label>
+  <select id="playerA"></select>
+
+  <label>Select Player B:</label>
+  <select id="playerB"></select>
+
+  <label>Select Winner:</label>
+  <select id="winner"></select>
+
+  <button onclick="">Record Match</button>
+
+  <h3>Player Stats:</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Player</th>
+        <th>Wins</th>
+        <th>Losses</th>
+      </tr>
+    </thead>
+    <tbody id="statsTable"></tbody>
+  </table>
+
+  <script src="script.js"></script>
+</body>
+</html>
