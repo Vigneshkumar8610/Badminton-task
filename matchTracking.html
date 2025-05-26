@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <title>Match Tracking</title>
-   <link rel="stylesheet" href="style.css">
-  </head>
+  <link rel="stylesheet" href="style.css">
+</head>
+
 <body>
-     <div class="topnav">
-        <a href="index.html">Home</a>
-        <a class="active" href="player.html">Player Management</a>
-        <a href="leaderBoard.html">LeaderBoard</a>
-        <a href="matchTracking.html">Match Tracking</a>
-    </div>
-    <br>
-    <br>
+  <div class="topnav">
+    <a href="index.html">Home</a>
+    <a href="player.html">Player Management</a>
+    <a href="leaderBoard.html">LeaderBoard</a>
+    <a class="active" href="matchTracking.html">Match Tracking</a>
+  </div>
+  <br>
+  <br>
   <h2>Match Tracking</h2>
 
   <label>Select Player A:</label>
@@ -22,10 +24,10 @@
   <label>Select Player B:</label>
   <select id="playerB"></select>
 
-  <label>Select Winner:</label>
+  <label>Select Winner:</label> 
   <select id="winner"></select>
 
-  <button onclick="">Record Match</button>
+  <button onclick="recordmatch()">Record Match</button>
 
   <h3>Player Stats:</h3>
   <table>
@@ -41,4 +43,5 @@
 
   <script src="script.js"></script>
 </body>
+
 </html>

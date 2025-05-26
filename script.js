@@ -62,22 +62,22 @@ function removePlayer() {
 }
 
 
-// match tracking
+//match tracking
 
-function loadPlayersToDropdown() {
-  var players = JSON.parse(localStorage.getItem("items")) || [];
-
+function loadPlayersToDropdown(){
+  var players = JSON.parse(localStorage.getItem("items"))  || [];  
+ 
   var playerA = document.getElementById("playerA");
   var playerB = document.getElementById("playerB");
   var winner = document.getElementById("winner");
+  
+ if (!playerA || !playerB || !winner) return;
 
-  if (!playerA || !playerB || !winner) return;
+    playerA.innerHTML = "";
+   playerB.innerHTML = "";
+   winner.innerHTML = "";
 
-  playerA.innerHTML = "";
-  playerB.innerHTML = "";
-  winner.innerHTML = "";
-
-  for (var i = 0; i < players.length; i++) {
+   for (var i = 0; i < players.length; i++) {
     var optionA = document.createElement("option");
     optionA.value = players[i];
     optionA.text = players[i];
@@ -95,7 +95,7 @@ function loadPlayersToDropdown() {
   }
 }
 
-function recordMatch() {
+function recordmatch() {
   var a = document.getElementById("playerA").value;
   var b = document.getElementById("playerB").value;
   var win = document.getElementById("winner").value;
@@ -176,7 +176,7 @@ function showLeaderBoard() {
   });
 
   // Create rows
-  for (var i = 0; i < players.length; i++) {
+   for (var i = 0; i < players.length; i++) {
     var row = document.createElement("tr");
 
     var rankCell = document.createElement("td");
@@ -210,3 +210,5 @@ window.onload = function () {
   showStats?.();
   showLeaderBoard?.();
 };
+
+
